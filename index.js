@@ -23,6 +23,30 @@ const option = {
   keepAlive: true,
 };
 
+//Import Mongoos Model
+require("./src/model/UserShema");
+
+//Routers imports
+var userRouter = require("./src/routes/UserRouter");
+
+//Router usage
+app.use("/user", userRouter);
+
+//mongo connection
+mongoose
+  .connect(
+    process.env.MONGO_CONNECTION_URL + "/" + process.env.MONGO_DB_NAME,
+    option
+  )
+  .then(
+    function () {
+      console.log("DB connection sucessfull");
+    },
+    function (err) {
+      console.log("DB connection failed", err);
+    }
+  );
+
 app.listen(process.env.SERVER_PORT, () => {
   console.log(`Server started on port :${process.env.SERVER_PORT}`);
 });
