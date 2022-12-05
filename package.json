@@ -1,0 +1,24 @@
+{
+  "name": "express-list-crud",
+  "version": "1.0.0",
+  "description": "A node project for List-Crud with Mongo DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesjesti/node-express-list-crud.git"
+  },
+  "author": "Jestin Wilson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jesjesti/node-express-list-crud/issues"
+  },
+  "homepage": "https://github.com/jesjesti/node-express-list-crud#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
