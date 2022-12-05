@@ -16,6 +16,13 @@ app.use(
   })
 );
 
+//Mongoos Connection
+const mongoose = require("mongoose");
+const option = {
+  socketTimeoutMS: 30000,
+  keepAlive: true,
+};
+
 app.listen(process.env.SERVER_PORT, () => {
   console.log(`Server started on port :${process.env.SERVER_PORT}`);
 });
