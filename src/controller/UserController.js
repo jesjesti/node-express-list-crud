@@ -25,6 +25,22 @@ exports.save = function (req, res) {
   });
 };
 
+exports.findAll = function (req, res) {
+  User.find({}, (err, data) => {
+    if (!error) {
+      return res.status(200).json({
+        message: "Fetch Sucessfull",
+        data: data,
+      });
+    } else {
+      return res.status(412).json({
+        message: "Internal error while fetching users",
+        data: null,
+      });
+    }
+  });
+};
+
 exports.update = function (req, res, next) {
   var userBean = new User(req.body);
   Role.findOneAndUpdate(
